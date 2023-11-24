@@ -1,23 +1,29 @@
 <?php
 
 // Create the database schema
-/*$sql = "CREATE TABLE IF NOT EXISTS family_data (
-    guardian_name VARCHAR(255) NOT NULL,
-    total_members INT NOT NULL,
-    teens INT NOT NULL,
-    females INT NOT NULL,
-    yearly_income INT NOT NULL,
-    occupation VARCHAR(255) NOT NULL,
+$sql = "CREATE TABLE IF NOT EXISTS survey_nov23 (
+    sno INT(10) NOT NULL AUTO_INCREMENT,
+    guardian VARCHAR(30) NOT NULL,
+    total_members INT(3) NOT NULL,
+    present_members INT(3) NOT NULL,
+    females INT(3) NOT NULL,
+    teens INT(3) NOT NULL,
+    working_hands INT(3) NOT NULL,
+    jobless INT(3),
+    income varchar(100),
+    income_source varchar(100),
+    non_voter INT(3) NOT NULL,
+    district varchar(100),
+    mob_num varchar(14) NOT NULL,
     caste VARCHAR(255) NOT NULL,
-    working_hands INT NOT NULL,
-    jobless INT NOT NULL,
-    phone_number VARCHAR(255) NOT NULL
+    dt DATE NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    seperator varchar(10) NOT NULL
 )";
 if ($conn->query($sql) === TRUE) {
     echo "Table family_data created successfully" . PHP_EOL;
 } else {
     echo "Error creating table: " . $conn->error . PHP_EOL;
-}*/
+}
 
 // Generate random family data
 $familyData = [];
